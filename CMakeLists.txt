@@ -18,8 +18,11 @@ add_subdirectory(plugin_manager)
 add_subdirectory(plugins)
 
 add_library(load_lib SHARED)
-target_link_libraries(load_lib PRIVATE load_lib_obj )
+target_link_libraries(load_lib PRIVATE load_lib_obj dl)
 
 if (FALSE) 
     add_subdirectory(third_party)
 endif()
+
+add_executable(run_test main.cpp)
+target_link_libraries(run_test PRIVATE load_lib)

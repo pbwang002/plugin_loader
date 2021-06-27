@@ -30,7 +30,7 @@ int PluginLoader::UnLoadPlugin()
 void* PluginLoader::GetFunc(const std::string& symbol)
 {
     auto it = funcMapping_.find(symbol);
-    if (it != funcMapping_.end() || it->second != nullptr) {
+    if (it != funcMapping_.end() && it->second != nullptr) {
         return it->second;
     }
 
