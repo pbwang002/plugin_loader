@@ -25,4 +25,4 @@ if (FALSE)
 endif()
 
 add_executable(run_test main.cpp)
-target_link_libraries(run_test PRIVATE load_lib)
+target_link_libraries(run_test PRIVATE load_lib add)
