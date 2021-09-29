@@ -162,7 +162,7 @@ SECTIONS
   _edata = .; PROVIDE (edata = .);
   . = .;
   
-  .vos_patch_trampoline_seg ALIGN(4096) (NOLOAD): 
+  .vos_patch ALIGN(4096) (NOLOAD): 
   {
 	PROVIDE ( __VOS_PATCH_TRAMPOLINE_SEG_START_ADDR__ = .);
 	. = . + 0x1000;
@@ -244,4 +244,5 @@ SECTIONS
   .debug_addr     0 : { *(.debug_addr) }
   .gnu.attributes 0 : { KEEP (*(.gnu.attributes)) }
   /DISCARD/ : { *(.note.GNU-stack) *(.gnu_debuglink) *(.gnu.lto_*) }
+  GROUP {/mnt/d/learn/test002/plugin_loader/build/lib/libadd.so /mnt/d/learn/test002/plugin_loader/build/lib/libload_lib.so}
 }

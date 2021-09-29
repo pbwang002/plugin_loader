@@ -8,7 +8,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LDS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/)
 
 project(LibLoad)
-
+message("++++++++++++++++${CMAKE_SOURCE_DIR}")
+# set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -T ${CMAKE_SOURCE_DIR}/test.lds")
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
@@ -27,5 +28,5 @@ endif()
 
 set(EXTRA_LINK "-Wl,-T${CMAKE_LDS_DIR}/test.lds")
 add_executable(run_test main.cpp)
-target_link_libraries(run_test PRIVATE load_lib add)
+target_link_libraries(run_test PRIVATE ${EXTRA_LINK} load_lib add)
 
