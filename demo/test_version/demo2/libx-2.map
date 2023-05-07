@@ -1,0 +1,11 @@
+libX_1.0 {
+    global:
+        foo;
+        bar;
+    local: *;
+};
+
+libX_2.0 {
+    global: foo;
+    local: *;
+};
